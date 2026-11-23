@@ -1,50 +1,52 @@
 # Keystone Law Firm, P.A.
 
-An original, editorial-first website for a Miami-based law firm serving South Florida. Built with React, Vite, React Router, and custom CSS, ready for Vercel hosting.
+An original editorial legal website for a Miami-based firm serving individuals, families and businesses throughout South Florida.
 
-## Design direction
-Keystone avoids the typical navy-and-gold stock-template look. The visual system combines charcoal, oxblood, ivory, muted brass, oversized editorial serif typography, a custom geometric K monogram, architectural imagery rendered in CSS, responsive microinteractions, and strong accessibility defaults. The site is an original interpretation of trends seen at Pallas Partners, Quinn Emanuel, Burnham Law, and Hugh James, not a copy of any design.
+## Visual approach
 
-## Included
-- Responsive home page with architectural hero, practice directory, philosophy section, resources and contact callout
-- Practice index and eleven practice-specific detail routes
-- Our Firm page with leadership profiles for Head Partner Frank Wolland and Managing Partner Lo Laughlin
-- Resources index and three fully written general legal information articles
-- Contact page with click-to-call and external directions
-- Legal notices, custom 404, mobile menu, scroll progress, reveal transitions
-- Per-route document titles and descriptions, local business structured data, accessible navigation, reduced-motion support
+This is not a reused insurance, finance or generic law firm website layout. Keystone is imagined as a printed legal journal and modern counsel desk: oversized Cormorant Garamond typography, technical index notes in IBM Plex Mono, warm paper, dark ink and restrained terracotta. No Miami skyline photographs, high-rise stock images, people stock imagery, faux architectural archways, generic three-card process blocks, or recycled page structure.
 
-## Development
+The initial K wordmark is temporary. The user has offered a logo mock and the final branding should be matched to that mock when supplied.
+
+## Structure
+
+- Editorial homepage and firm introduction
+- All 11 practice areas in an interactive filterable directory plus individual detail pages
+- Separate feature on litigation and transactional representation
+- Leadership of Frank Wolland, firm owner and Head Partner, and Lo Laughlin, Managing Partner
+- Our Firm page, journal with three educational articles, contact information, legal notice and 404 page
+- Mobile menu, responsive layouts, semantic navigation, reduced motion preferences, page metadata, and legal service structured data
+
+## Run locally
+
 ```bash
 npm install
 npm run dev
 npm run build
 ```
-Connect this repository to Vercel as a **Vite** project. The build output directory is `dist`. The included `vercel.json` provides client-side route rewrites.
 
-## MUST VERIFY BEFORE PUBLIC LAUNCH
-This is a design implementation, **not a lawyer-approved advertisement**. Please obtain written firm approval for:
-1. Official spelling of firm name, office location, and telephone number.
-2. The scope and public wording of all eleven practice areas supplied by the firm on November 23, 2026.
-3. Leadership roles supplied by the firm: Frank Wolland, owner and Head Partner, and Lo Laughlin, Managing Partner. No unverified biography or photographic likeness has been added.
-4. All statements about the firm's approach and services.
-5. Florida Bar advertising compliance, accessibility, privacy policy, and data handling.
-6. The production domain, canonical URLs, and any additional location or practice-area SEO pages.
+Technology: React, Vite, React Router, Lucide icons, original CSS.
+Vercel settings: framework Vite, root `./`, build command `npm run build`, output `dist`.
 
-### Research and public sources
-- Florida Division of Corporations entity record: https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=domp-p16000016754-166b923a-4af1-4108-97c9-0ff6f1ae572e
-- Public contact listing, FindLaw, updated March 2026: https://lawyers.findlaw.com/florida/north-miami/5109264_1/
-- Florida Bar profile: https://www.floridabar.org/directories/find-mbr/profile/?num=247537
-- Florida Bar website advertising checklist: https://www.floridabar.org/ethics/etad/checklist-websites-sm-video-sharing/
-- Practice areas, leadership roles, and geographic service description supplied by the user for Keystone Law Firm, P.A. on November 23, 2026. Review before launch.
+## Vercel project and domain consolidation
 
-## Current firm positioning
-Miami-based law firm representing individuals, families, and businesses throughout South Florida, handling litigation and transactional matters including complex business, financial, and property disputes. Firm owned and led by Frank Wolland, Head Partner, alongside Lo Laughlin, Managing Partner.
+The user reports two Vercel projects and multiple domains and wants one project and one primary domain. The currently connected Vercel account only exposes the separate `vantivue` project. It does not expose a Keystone project or either claimed duplicate. Do not delete an unidentified Vercel project or disconnect production domains without identifying their owner and existing routing. Once the correct account is accessible, preserve the Git-linked Keystone project and selected primary domain, then verify redirects and detach extras. Vercel project deletion requires the account owner's confirmation in Vercel.
 
-## Contact form policy
-No fictional email addresses, broken intake forms, or unapproved case data collection. Contact currently uses click-to-call and map directions. A secure lead intake flow can be added after the firm confirms the inbox, privacy requirements, consent language, retention policy and delivery service.
+## Review before publication
 
-## Notes
-The design uses Google Fonts. If the firm requires fully self-hosted fonts, those can be replaced with an appropriately licensed local font solution.
+Firm supplied the practice areas and leadership names; obtain signoff on legal advertising and exact scope of services, attorney biographies, the official logo, correct office address and phone, accessibility, privacy disclosures, and final domain. No fabricated testimonials, results, awards, partner portraits, or new contact form were added.
 
-© 2026 Keystone Law Firm, P.A. Site design and implementation.
+Current practice area titles:
+1. Civil & Commercial Litigation
+2. Business & Corporate Law
+3. Real Estate & Property Law
+4. Family Law & Divorce
+5. Probate, Estate Administration & Guardianship
+6. Construction Litigation
+7. Foreclosure & Bankruptcy Litigation
+8. Condominium & HOA Disputes
+9. Contract Disputes & Debt Collection
+10. Code Enforcement, Zoning & Municipal Law
+11. Nonprofit & Religious Organization Representation
+
+© 2026 Keystone Law Firm, P.A.
