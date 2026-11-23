@@ -90,25 +90,29 @@ function SmallHeading({children}) {
 
 function Hero() {
   return <section className="home-hero">
-    <div className="container home-hero__shell">
-      <div className="home-hero__topline"><span>KEYSTONE LAW FIRM, P.A.</span><span>MIAMI / SOUTH FLORIDA</span></div>
-      <div className="home-hero__main">
-        <div className="home-hero__title">
-          <span className="eyebrow">LITIGATION & TRANSACTIONAL COUNSEL</span>
-          <h1>Legal counsel<br/>for complex<br/>matters.</h1>
-        </div>
-        <div className="home-hero__right">
-          <p>Keystone Law Firm, P.A. represents individuals, families and businesses throughout South Florida. Our work spans litigation, business and corporate law, property matters, family law and estate administration.</p>
-          <LinkArrow to="/practice-areas">Explore our practices</LinkArrow>
-          <div className="home-hero__rule"/>
-          <span>BASED IN MIAMI. WORKING ACROSS SOUTH FLORIDA.</span>
-        </div>
+    <div className="home-hero__copy">
+      <div className="home-hero__meta"><span>KEYSTONE LAW FIRM, P.A.</span><span>MIAMI, FLORIDA</span></div>
+      <div className="home-hero__content">
+        <span className="eyebrow">A DIFFERENT APPROACH TO LEGAL COUNSEL</span>
+        <h1>More than<br/>a case.<br/><em>More than</em><br/>a contract.</h1>
+        <p>Law impacts the things people build, own and care about. Keystone represents individuals, families and businesses in litigation and transactional matters across South Florida.</p>
+        <Link to="/contact" className="home-hero__primary">Discuss your matter <ArrowUpRight size={22}/></Link>
       </div>
-      <div className="home-hero__bottom"><span>Keystone Law Firm, P.A.</span><span>Scroll to explore <span aria-hidden="true">↓</span></span></div>
+      <div className="home-hero__foot"><span>OUR PERSPECTIVE, YOUR NEXT MOVE</span><span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span></div>
     </div>
+    <aside className="home-hero__folio" aria-label="Our work at a glance">
+      <div className="home-hero__folio-top"><span>THE KEYSTONE INDEX</span><span>01 / 03</span></div>
+      <div className="home-hero__folio-body">
+        <span className="home-hero__folio-label">REPRESENTATION ACROSS</span>
+        <Link to="/practice-areas/civil-commercial-litigation"><span>Litigation</span><ArrowUpRight size={24}/></Link>
+        <Link to="/practice-areas/business-corporate-law"><span>Business</span><ArrowUpRight size={24}/></Link>
+        <Link to="/practice-areas/real-estate-property-law"><span>Property</span><ArrowUpRight size={24}/></Link>
+        <Link to="/practice-areas/family-law-divorce"><span>Family</span><ArrowUpRight size={24}/></Link>
+      </div>
+      <div className="home-hero__folio-foot"><strong>11</strong><p>PRIMARY<br/>PRACTICE AREAS</p><Link to="/practice-areas">VIEW THE FULL INDEX ↗</Link></div>
+    </aside>
   </section>;
 }
-
 function PracticeIndex({forHome=false}){
   return <div className={'practice-directory'+(forHome?' practice-directory--home':'')}>
     {categories.map(category=><section className="practice-group" key={category.name}>
@@ -129,25 +133,50 @@ function PracticeIndex({forHome=false}){
   </div>;
 }
 
-function HomePractice(){
-  return <section className="home-practice section-pad"><div className="container">
-    <div className="section-intro"><div><SmallHeading>What we do</SmallHeading><h2>Legal services across<br/>the matters that shape your life and business.</h2></div><p>Keystone handles both contested matters and transactions. Our principal practice areas are organized below to help you find the right place to start.</p></div>
-    <PracticeIndex forHome/>
-    <div className="section-footer"><span>All 11 practice areas</span><LinkArrow quiet to="/practice-areas">Detailed overview</LinkArrow></div>
-  </div></section>;
-}
-
-function HomeAbout(){
-  return <section className="home-about"><div className="container home-about__layout">
-    <div className="home-about__intro"><SmallHeading>About the firm</SmallHeading><h2>Independent counsel.<br/>A broad perspective.</h2></div>
-    <div className="home-about__body">
-      <p>Keystone is a Miami based law firm handling litigation and transactional work, including complex business, financial and property disputes.</p>
-      <p>The firm is owned and led by Frank Wolland, Head Partner, alongside Managing Partner Lo Laughlin.</p>
-      <LinkArrow quiet to="/our-firm">Meet the firm</LinkArrow>
+function HomePractice() {
+  const [active,setActive]=useState(0);
+  const group=categories[active];
+  return <section className="home-practice" id="expertise">
+    <div className="container">
+      <div className="home-practice__intro">
+        <div><span className="eyebrow">01 / THE WORK</span><h2>The right approach<br/><em>depends on the matter.</em></h2></div>
+        <p>From negotiations to the courtroom, our work crosses industries, relationships and legal disciplines. Choose a category to see where Keystone can assist.</p>
+      </div>
+      <div className="practice-explorer">
+        <div className="practice-explorer__menu" role="group" aria-label="Explore practice categories">
+          {categories.map((category,i)=><button type="button" key={category.name} onClick={()=>setActive(i)} aria-pressed={active===i} className={active===i?'active':''}>
+            <span>0{i+1}</span><strong>{category.name}</strong><ArrowUpRight size={17}/>
+          </button>)}
+          <div className="practice-explorer__note"><span>KEYSTONE / AREAS OF REPRESENTATION</span><p>11 primary practice areas.<br/>Litigation and transactional work.</p></div>
+        </div>
+        <div className="practice-explorer__content" key={group.name}>
+          <div className="practice-explorer__top"><span>{group.name.toUpperCase()}</span><span>{String(group.slugs.length).padStart(2,'0')} PRACTICES</span></div>
+          <p className="practice-explorer__description">{group.description}</p>
+          <div className="practice-explorer__links">
+            {group.slugs.map((slug,i)=>{const practice=practices.find(p=>p.slug===slug);return practice?<Link key={slug} to={'/practice-areas/'+slug}><span className="practice-explorer__count">{String(i+1).padStart(2,'0')}</span><span>{practice.title}</span><ArrowUpRight size={19}/></Link>:null})}
+          </div>
+          <LinkArrow to="/practice-areas">Full practice directory</LinkArrow>
+        </div>
+      </div>
     </div>
-  </div></section>;
+  </section>;
 }
-
+function HomeAbout() {
+  return <section className="home-about">
+    <div className="container home-about__layout">
+      <div className="home-about__lead">
+        <span className="eyebrow">02 / THE FIRM</span>
+        <h2>There is no<br/><em>standard</em> case.</h2>
+        <div className="home-about__signature"><span>KEYSTONE LAW FIRM, P.A.</span><span>MIAMI / SOUTH FLORIDA</span></div>
+      </div>
+      <div className="home-about__story">
+        <p>Every dispute has its circumstances. Every transaction has its consequences. We work across both, bringing legal perspective to the questions facing our clients.</p>
+        <p>Keystone Law Firm, P.A. is based in Miami and serves individuals, families and businesses throughout South Florida, including complex business, financial and property matters.</p>
+        <LinkArrow quiet to="/our-firm">More about our firm</LinkArrow>
+      </div>
+    </div>
+  </section>;
+}
 function Leaders({compact=false}){
   return <div className={'leaders'+(compact?' leaders--compact':'')}>
     {firm.leadership.map(person=><div className="leader" key={person.name}>
@@ -156,20 +185,32 @@ function Leaders({compact=false}){
   </div>;
 }
 
-function HomeLeaders(){
-  return <section className="home-leaders section-pad"><div className="container">
-    <div className="home-leaders__head"><SmallHeading>Leadership</SmallHeading><p>The attorneys leading Keystone.</p></div>
-    <Leaders compact/>
-  </div></section>;
+function HomeLeaders() {
+  return <section className="home-leaders">
+    <div className="container">
+      <div className="home-leaders__top">
+        <span className="eyebrow">03 / FIRM LEADERSHIP</span>
+        <div><h2>The people<br/><em>behind Keystone.</em></h2><p>Frank Wolland and Lo Laughlin lead Keystone's practice.</p></div>
+      </div>
+      <div className="home-leaders__grid">
+        {firm.leadership.map((person,i)=><div className={'home-leader home-leader--'+i} key={person.name}>
+          <div className="home-leader__top"><span>0{i+1}</span><span>KEYSTONE LAW FIRM, P.A.</span></div>
+          <div className="home-leader__identity"><span className="home-leader__role">{person.role}</span><h3>{person.name}</h3></div>
+          <div className="home-leader__bottom"><span>SOUTH FLORIDA</span><span aria-hidden="true">↗</span></div>
+        </div>)}
+      </div>
+      <div className="home-leaders__more"><LinkArrow to="/our-firm">Learn about our firm</LinkArrow></div>
+    </div>
+  </section>;
 }
-
-function ContactBand(){
-  return <section className="contact-band"><div className="container contact-band__layout">
-    <div><SmallHeading>Contact Keystone</SmallHeading><h2>Talk to us about<br/>your legal matter.</h2></div>
-    <div><p>Our office is located in North Miami and serves clients throughout South Florida.</p><LinkArrow to="/contact">Contact our office</LinkArrow></div>
-  </div></section>;
+function ContactBand() {
+  return <section className="contact-band">
+    <div className="container contact-band__layout">
+      <div><span className="eyebrow">START HERE</span><h2>Have a legal<br/><em>matter to discuss?</em></h2></div>
+      <div className="contact-band__right"><p>We work with individuals, families, businesses and organizations throughout South Florida.</p><Link to="/contact" className="contact-band__action">Contact Keystone <ArrowUpRight size={23}/></Link><a className="contact-band__phone" href={firm.phoneHref}>{firm.phone}</a></div>
+    </div>
+  </section>;
 }
-
 function Home(){
   return <><Hero/><HomePractice/><HomeAbout/><HomeLeaders/><ContactBand/></>;
 }

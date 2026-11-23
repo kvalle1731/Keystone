@@ -1,23 +1,38 @@
 # Keystone Law Firm, P.A.
 
-A responsive public website for Keystone Law Firm, P.A., a Miami-based law firm serving individuals, families and businesses throughout South Florida.
+## Website concept
 
-## Current design
+An original high contrast editorial experience for Keystone Law Firm, P.A., a Miami-based practice serving individuals, families and businesses throughout South Florida.
 
-Quiet, structured and professional, with a near-monochrome palette: white, charcoal, cool light gray, and a restrained slate blue. The typographic system uses Source Serif 4 with Inter. No stock images, invented skyline or skyscraper photography, ornamental architectural illustrations, false portraits, decorative initials, or fabricated firm history. The wordmark is text-based until the firm supplies and approves its real logo.
+### Visual direction
 
-The homepage opens with a plain statement of the firm's scope and purpose, followed by three grouped practice lists with direct links, a concise firm profile, named partners and practical contact information. It avoids template-style feature cards, fake awards, generalized inspirational slogans, animations, and artificial editorial motifs.
+- Deep ink, vibrant cobalt, chalk white and soft lilac.
+- Elegant Instrument Serif with direct modern DM Sans typography.
+- Split-screen opening: confident messaging on dark ink alongside a cobalt index of real legal practices.
+- Interactive practice explorer showing all 11 primary practices across three categories.
+- Strong typographic storytelling, vivid partner presentation and prominent, accessible contact actions.
+- No high-rise Miami stock photography, fake portraits, fabricated results, awards, testimonials or other unsupported trust claims.
+- A temporary text wordmark and simple favicon pending review of the firm's actual logo mock.
 
-## Current site sections
+### Site routes
 
-- Home
-- Practice areas, including all eleven firm-supplied categories and dedicated detail pages
-- Our firm, naming Head Partner Frank Wolland and Managing Partner Lo Laughlin
-- Resources and three introductory articles
-- Contact information and directions
-- Legal notice
+- Home: / 
+- Practice directory: /practice-areas
+- Eleven individual practice pages: /practice-areas/:slug
+- Our firm: /our-firm
+- Resources: /insights
+- Individual articles: /insights/:slug
+- Contact: /contact
+- Legal notice: /disclaimer
 
-## Local development
+## Leadership
+
+Head Partner and firm owner: Frank Wolland.
+Managing Partner: Lo Laughlin.
+
+## Build
+
+React 18, Vite, React Router, custom responsive CSS, lucide-react.
 
 ```bash
 npm install
@@ -25,28 +40,12 @@ npm run dev
 npm run build
 ```
 
-This is a Vite + React project. Vercel settings: root `./`, build command `npm run build`, output directory `dist`.
+Vercel framework Vite, build `npm run build`, output directory `dist`. The SPA rewrite is defined in `vercel.json`.
 
-## Pending approval
+## Prelaunch
 
-The firm must approve the office address and phone, practice descriptions, attorney advertising language, privacy terms and any required Florida Bar notices before public launch. No functional intake form is published without a verified destination and consent requirements.
+Confirm exact address, phone number, scope of offered legal services, advertising compliance, privacy and legal notices, attorney profiles and logo before public launch. No unapproved form or user submission data collection.
 
-The initial logo is text-only until the logo mock is provided.
+### Hosting note
 
-## Vercel consolidation
-
-Both Vercel projects `keystone` and `keystone1` reported deployment statuses for this repository via GitHub. The Vercel connector did not grant project read and domain management access, so we cannot verify their complete domain mapping or safely delete the duplicate. Keep one project and one primary domain after authorized access is restored and all domain routing is verified. Do not affect the unrelated `vantivue` project.
-
-## Firm practice areas
-
-1. Civil & Commercial Litigation
-2. Business & Corporate Law
-3. Real Estate & Property Law
-4. Family Law & Divorce
-5. Probate, Estate Administration & Guardianship
-6. Construction Litigation
-7. Foreclosure & Bankruptcy Litigation
-8. Condominium & HOA Disputes
-9. Contract Disputes & Debt Collection
-10. Code Enforcement, Zoning & Municipal Law
-11. Nonprofit & Religious Organization Representation
+Two Vercel deployment status contexts have appeared on Keystone's GitHub commits, `keystone` and `keystone1`. The current Vercel connector has not been authorized to access these projects' settings or domain lists, so domain consolidation has not been performed. Preserve one project and primary domain once actual routing and ownership are confirmed.
