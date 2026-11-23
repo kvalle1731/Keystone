@@ -31,8 +31,8 @@ function ScrollManager() {
   const location = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-    let description = 'Keystone Law Firm, P.A. in North Miami, Florida. Considered legal guidance for complex matters.';
-    let title = 'Keystone Law Firm, P.A. | North Miami, Florida';
+    let description = 'Keystone Law Firm, P.A. is a Miami-based law firm serving individuals, families and businesses throughout South Florida with litigation and transactional counsel.';
+    let title = 'Keystone Law Firm, P.A. | Miami & South Florida';
     const path = location.pathname;
     if (path.startsWith('/practice-areas/')) {
       const match = practices.find((p) => path.endsWith(p.slug));
@@ -108,7 +108,7 @@ function Header() {
   return (
     <>
       <div className="utility-bar">
-        <span>NORTH MIAMI, FLORIDA</span>
+        <span>MIAMI BASED · SERVING SOUTH FLORIDA</span>
         <span className="utility-bar__right">PERSPECTIVE IN EVERY DECISION <span aria-hidden="true">✦</span> <a href={firm.phoneHref}>{firm.phone}</a></span>
       </div>
       <header className="site-header">
@@ -166,7 +166,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero__topline shell">
-        <span className="hero__topline-left">INDEPENDENT THINKING. CONSIDERED COUNSEL.</span>
+        <span className="hero__topline-left">LITIGATION · TRANSACTIONS · CONSIDERED COUNSEL</span>
         <span className="hero__topline-right">25°53′ N &nbsp; / &nbsp; 80°11′ W</span>
       </div>
       <div className="hero__grid shell">
@@ -175,7 +175,7 @@ function Hero() {
           <h1>The strength<br/><em>behind</em> your<br/>next move<span className="hero__period">.</span></h1>
           <div className="hero__description">
             <div className="hero__description-line" />
-            <p>Some decisions carry more weight than others. Find a clear perspective on the legal matters shaping what comes next.</p>
+            <p>Miami-based counsel for individuals, families, and businesses throughout South Florida. From complex litigation to significant transactions, we help you navigate what comes next.</p>
           </div>
           <div className="hero__actions">
             <Link className="button button--gold" to="/practice-areas">Explore our practice <ArrowUpRight size={18}/></Link>
@@ -201,8 +201,8 @@ function IntroStrip() {
     <section className="intro-strip">
       <div className="shell intro-strip__inner">
         <div className="intro-strip__eyebrow reveal"><span>01 / THE PERSPECTIVE</span><span className="intro-strip__rule"/></div>
-        <p className="intro-strip__quote reveal">Not every legal matter is straightforward. <em>Every next step</em> deserves thoughtful consideration.</p>
-        <div className="intro-strip__aside reveal"><span className="asterisk">✳</span><p>Legal guidance shaped around the questions that matter to you.</p></div>
+        <p className="intro-strip__quote reveal">From the courtroom to the closing table, <em>every decision</em> deserves thoughtful counsel.</p>
+        <div className="intro-strip__aside reveal"><span className="asterisk">✳</span><p>Litigation and transactional representation for South Florida individuals, families, and businesses.</p></div>
       </div>
     </section>
   );
@@ -213,7 +213,7 @@ function PracticeList({ limit }) {
   return <div className="practice-list">
     {items.map((item, i) =>
       <Link className="practice-row reveal" key={item.slug} to={'/practice-areas/' + item.slug}>
-        <span className="practice-row__number">0{i+1}</span>
+        <span className="practice-row__number">{String(i + 1).padStart(2, "0")}</span>
         <div className="practice-row__main">
           <span className="practice-row__category">{item.category}</span>
           <h3>{item.title}</h3>
@@ -232,9 +232,10 @@ function ExpertiseSection() {
         <SectionLabel number="02">WHERE WE FOCUS</SectionLabel>
         <div className="section-heading section-heading--split reveal">
           <h2>Every matter<br/>has its <em>weight.</em></h2>
-          <div><p>Different challenges call for different approaches. Explore the practice areas currently identified for Keystone.</p><TextLink to="/practice-areas">All practice areas</TextLink></div>
+          <div><p>From commercial and construction litigation to corporate, real estate, family, and estate matters, discover how Keystone approaches complex legal needs.</p><TextLink to="/practice-areas">All practice areas</TextLink></div>
         </div>
-        <PracticeList />
+        <PracticeList limit={6} />
+        <div className="practice-preview-more reveal"><span>Explore all 11 areas of practice.</span><TextLink to="/practice-areas">View our full expertise</TextLink></div>
       </div>
     </section>
   );
@@ -248,13 +249,45 @@ function ManifestoSection() {
           <SectionLabel number="03" light>OUR PHILOSOPHY</SectionLabel>
           <p className="manifesto-section__overline">STRENGTH IN THE SUBSTANCE</p>
           <h2>Grounded in<br/><em>perspective.</em><br/>Focused on<br/>what matters.</h2>
-          <p className="manifesto-section__text">The most important legal questions are rarely the simplest. We believe a clear conversation is the right place to begin.</p>
+          <p className="manifesto-section__text">Led by Frank Wolland and Lo Laughlin, Keystone works with individuals, families, and businesses across disputes, transactions, and the decisions that connect them.</p>
           <TextLink to="/our-firm" inverse>Discover the firm</TextLink>
         </div>
         <div className="manifesto-section__graphic reveal" aria-hidden="true">
           <span className="manifesto-section__outline">K</span>
           <span className="manifesto-section__circle"><span>KEYSTONE<br/>LAW FIRM</span><span>EST. IN FLORIDA<br/>2016</span></span>
           <span className="manifesto-section__axis">A SOUND FOUNDATION / A CLEAR DIRECTION</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LeadershipSection({ onHome = false }) {
+  return (
+    <section className="leadership-section section-space">
+      <div className="shell">
+        <SectionLabel number={onHome ? "04" : "03"}>LEADERSHIP AT KEYSTONE</SectionLabel>
+        <div className="section-heading section-heading--split reveal">
+          <h2>The people<br/><em>behind the firm.</em></h2>
+          <div>
+            <p>Keystone is owned and led by Frank Wolland, Head Partner, alongside Lo Laughlin, Managing Partner.</p>
+            {onHome && <TextLink to="/our-firm">About our firm</TextLink>}
+          </div>
+        </div>
+        <div className="leadership-grid">
+          {firm.leadership.map((leader, index) =>
+            <article className="leadership-card reveal" key={leader.name}>
+              <div className={'leadership-card__monogram leadership-card__monogram--' + index} aria-hidden="true">
+                <div className="leadership-card__arch"><span>{leader.name.split(' ').map(part => part[0]).join('')}</span></div>
+                <div className="leadership-card__monogram-footer">KEYSTONE LAW FIRM, P.A. <span>0{index + 1}</span></div>
+              </div>
+              <div className="leadership-card__body">
+                <span className="eyebrow">{leader.role}</span>
+                <h3>{leader.name}</h3>
+                <p>{leader.note}</p>
+              </div>
+            </article>
+          )}
         </div>
       </div>
     </section>
@@ -270,7 +303,7 @@ function ProcessSection() {
   return (
     <section className="process-section section-space">
       <div className="shell">
-        <SectionLabel number="04">THE FIRST CONVERSATION</SectionLabel>
+        <SectionLabel number="05">THE FIRST CONVERSATION</SectionLabel>
         <div className="process-section__head reveal">
           <h2>Clarity is<br/><em>the starting point.</em></h2>
           <p>A legal question can feel complicated before you have the right information. Here's how to prepare for an initial discussion.</p>
@@ -306,7 +339,7 @@ function ResourcesSection() {
   return (
     <section className="resources-section section-space">
       <div className="shell">
-        <SectionLabel number="05">THINGS WORTH KNOWING</SectionLabel>
+        <SectionLabel number="06">THINGS WORTH KNOWING</SectionLabel>
         <div className="section-heading section-heading--split reveal">
           <h2>Knowledge is<br/><em>its own advantage.</em></h2>
           <div><p>Plain-language resources to help you approach a legal conversation with better questions.</p><TextLink to="/insights">Explore resources</TextLink></div>
@@ -332,7 +365,7 @@ function ContactBanner() {
 }
 
 function Home() {
-  return <><Hero/><IntroStrip/><ExpertiseSection/><ManifestoSection/><ProcessSection/><ResourcesSection/><ContactBanner/></>;
+  return <><Hero/><IntroStrip/><ExpertiseSection/><ManifestoSection/><LeadershipSection onHome/><ProcessSection/><ResourcesSection/><ContactBanner/></>;
 }
 
 function InteriorHero({ index, eyebrow, title, accent, description, tone = 'light' }) {
@@ -353,12 +386,12 @@ function InteriorHero({ index, eyebrow, title, accent, description, tone = 'ligh
 function PracticeIndex() {
   return (
     <>
-      <InteriorHero index="01" eyebrow="EXPERTISE" title="The matters" accent="that matter." description="Explore the legal subjects Keystone identifies within its practice. Every engagement begins with a discussion of your specific circumstances."/>
+      <InteriorHero index="01" eyebrow="EXPERTISE" title="The matters" accent="that matter." description="Explore all 11 practice areas, from civil and commercial litigation to transactional matters, family law, property disputes, and representation of organizations throughout South Florida."/>
       <section className="interior-content section-space">
         <div className="shell">
           <SectionLabel number="01">AREAS OF PRACTICE</SectionLabel>
           <PracticeList/>
-          <div className="aside-note reveal"><span>✳</span><p>Practice descriptions are general. Contact the office to confirm the firm's availability for your specific matter.</p></div>
+          <div className="aside-note reveal"><span>✳</span><p>These are the 11 primary practice areas provided by the firm. The appropriate services and scope of representation will depend on your circumstances.</p></div>
         </div>
       </section>
       <ContactBanner/>
@@ -387,7 +420,7 @@ function PracticeDetail() {
           <div className="detail-body__main">
             <SectionLabel number="01">POSSIBLE AREAS OF ASSISTANCE</SectionLabel>
             <h2>Consider the<br/><em>full picture.</em></h2>
-            <p>Legal matters can involve several overlapping considerations. The following topics are examples for an initial discussion, not a promise that the firm handles every type of matter listed.</p>
+            <p>Each matter involves its own documents, timelines, and legal considerations. Here are some of the issues that may arise within this practice area.</p>
             <div className="scope-list">
               {item.scope.map((scope,i) => <div className="scope-list__row" key={scope}><span>0{i+1}</span><h3>{scope}</h3><Plus size={17} strokeWidth={1.3}/></div>)}
             </div>
@@ -415,15 +448,15 @@ function PracticeDetail() {
 function FirmPage() {
   return (
     <>
-      <InteriorHero index="02" eyebrow="OUR FIRM" title="Grounded in" accent="perspective." description="A North Miami legal practice with a considered approach to questions that matter." tone="dark"/>
+      <InteriorHero index="02" eyebrow="OUR FIRM" title="Grounded in" accent="perspective." description="A Miami-based practice serving individuals, families, and businesses throughout South Florida. Led by Head Partner Frank Wolland and Managing Partner Lo Laughlin." tone="dark"/>
       <section className="firm-story section-space">
         <div className="shell firm-story__grid">
           <div className="firm-story__visual reveal"><div className="firm-story__arch"><Mark large/></div><span>STRUCTURE / PURPOSE / CLARITY</span></div>
           <div className="firm-story__copy reveal">
             <SectionLabel number="01">WHO WE ARE</SectionLabel>
             <h2>Good judgment<br/>begins with <em>listening.</em></h2>
-            <p>Keystone Law Firm, P.A. is a Florida professional association based in North Miami. The firm was registered with the Florida Division of Corporations in 2016.</p>
-            <p>Legal matters are rarely just legal. They can affect relationships, property, family responsibilities, and the future. Keystone's website is designed to make the first conversation straightforward and the next step easier to understand.</p>
+            <p>Keystone Law Firm, P.A. is a Miami-based law firm representing individuals, families, and businesses throughout South Florida. The firm is owned and led by Frank Wolland, Head Partner, alongside Managing Partner Lo Laughlin.</p>
+            <p>Keystone handles both litigation and transactional matters, including complex business, financial, and property disputes. Its practice spans corporate and real estate concerns, family and probate matters, construction and community association disputes, and issues involving municipalities, nonprofits, and religious organizations.</p>
             <TextLink to="/contact">Connect with the office</TextLink>
           </div>
         </div>
@@ -437,12 +470,7 @@ function FirmPage() {
           </div>
         </div>
       </section>
-      <section className="attorney-panel">
-        <div className="shell attorney-panel__grid">
-          <div><SectionLabel number="03" light>ATTORNEY DIRECTORY</SectionLabel><h2>The people<br/><em>behind the practice.</em></h2></div>
-          <div className="attorney-panel__card"><span className="eyebrow">FLORIDA BAR DIRECTORY</span><h3>Frank Wolland</h3><p>Attorney associated with Keystone Law Firm, P.A., according to The Florida Bar's public directory.</p><a href="https://www.floridabar.org/directories/find-mbr/profile/?num=247537" target="_blank" rel="noreferrer">View Florida Bar directory <ArrowUpRight size={17}/></a></div>
-        </div>
-      </section>
+      <LeadershipSection/>
       <ContactBanner/>
     </>
   );
@@ -483,12 +511,12 @@ function ArticlePage() {
 
 function ContactPage() {
   return <>
-    <InteriorHero index="04" eyebrow="CONTACT" title="A conversation" accent="is a beginning." description="Get in touch with Keystone's North Miami office. For urgent deadlines or legal matters, call rather than relying on an online message." tone="dark"/>
+    <InteriorHero index="04" eyebrow="CONTACT" title="A conversation" accent="is a beginning." description="Keystone serves clients throughout South Florida from its North Miami office. For urgent legal deadlines, please call the firm directly." tone="dark"/>
     <section className="contact-page section-space"><div className="shell contact-page__grid">
       <div className="contact-page__left reveal">
         <SectionLabel number="01">GET IN TOUCH</SectionLabel>
         <h2>We're here<br/>to <em>listen.</em></h2>
-        <p>Speak with the office about your matter and whether Keystone may be able to assist.</p>
+        <p>Contact Keystone about litigation, business and corporate law, property issues, family matters, estate administration, and other legal needs throughout South Florida.</p>
         <a className="contact-page__call" href={firm.phoneHref}>{firm.phone} <ArrowUpRight size={26}/></a>
         <span className="contact-page__call-caption">CALL KEYSTONE LAW FIRM, P.A.</span>
       </div>
@@ -538,13 +566,13 @@ function Footer() {
   return <footer className="footer">
     <div className="shell">
       <div className="footer__top">
-        <div className="footer__brand"><Wordmark light/><p>Thoughtful perspective for consequential moments.</p></div>
+        <div className="footer__brand"><Wordmark light/><p>Litigation and transactional counsel for individuals, families, and businesses across South Florida.</p></div>
         <div className="footer__nav"><span className="eyebrow">EXPLORE</span><Link to="/practice-areas">Expertise</Link><Link to="/our-firm">Our firm</Link><Link to="/insights">Resources</Link><Link to="/contact">Contact</Link></div>
         <div className="footer__office"><span className="eyebrow">NORTH MIAMI OFFICE</span><address>{firm.addressLine1}<br/>{firm.addressLine2}<br/>{firm.cityLine}</address><a href={firm.phoneHref}>{firm.phone}</a></div>
       </div>
       <div className="footer__large-word" aria-hidden="true">KEYSTONE<span>✳</span></div>
       <div className="footer__bottom"><span>© {new Date().getFullYear()} KEYSTONE LAW FIRM, P.A.</span><Link to="/disclaimer">LEGAL NOTICE &amp; PRIVACY</Link><a href="#top" onClick={(event)=>{event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}}>BACK TO TOP ↑</a></div>
-      <p className="footer__disclaimer">This website is for general information only and is not legal advice. Contacting the firm does not create an attorney-client relationship. Practice descriptions and contact information are subject to verification before public launch.</p>
+      <p className="footer__disclaimer">General information, not legal advice. No attorney-client relationship arises from using this website or contacting the firm. Contact and advertising details remain subject to final firm review.</p>
     </div>
   </footer>;
 }

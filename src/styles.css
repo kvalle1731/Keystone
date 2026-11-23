@@ -527,3 +527,32 @@ p{line-height:1.75}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* Firm leadership and expanded legal practice directory */
+.practice-preview-more{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:40px}
+.practice-preview-more>span{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.25rem,1.8vw,1.8rem);color:var(--wine)}
+.leadership-section{background:#e9e4da}
+.leadership-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.leadership-card{min-width:0;background:#f5f0e8}
+.leadership-card__monogram{height:345px;position:relative;overflow:hidden;background:linear-gradient(135deg,#3b302d,#6b4944 44%,#211e1c 100%)}
+.leadership-card__monogram--1{background:linear-gradient(138deg,#b6a083,#d2c1a6 48%,#6d655a 100%)}
+.leadership-card__monogram::before{content:'';position:absolute;inset:-40% 17%;border:1px solid #e8cfa04d;border-radius:50%;transform:rotate(25deg)}
+.leadership-card__monogram::after{content:'';position:absolute;left:-20%;right:-20%;height:1px;background:#ffffff36;top:57%;transform:rotate(-20deg)}
+.leadership-card__arch{position:absolute;left:25%;width:50%;bottom:-23%;height:105%;border:16px double #e0c9a278;border-radius:50% 50% 0 0 / 34% 34% 0 0;display:grid;place-items:center;box-shadow:0 0 0 20px #d9c4a010,inset 0 0 55px #0003}
+.leadership-card__arch span{font-family:'Playfair Display',Georgia,serif;font-size:clamp(6rem,10vw,11rem);font-style:italic;line-height:1;color:#e6cc9dc9;letter-spacing:-.09em;transform:translateY(-15%)}
+.leadership-card__monogram--1 .leadership-card__arch{border-color:#5c463f66}
+.leadership-card__monogram--1 .leadership-card__arch span{color:#4b3b39b6}
+.leadership-card__monogram-footer{position:absolute;bottom:20px;left:25px;right:25px;display:flex;justify-content:space-between;gap:8px;color:#f0e5d5;font-family:'DM Sans',Arial,sans-serif;font-weight:600;font-size:.57rem;letter-spacing:.14em;z-index:2}
+.leadership-card__monogram--1 .leadership-card__monogram-footer{color:#4c413d}
+.leadership-card__body{padding:32px 36px 39px}
+.leadership-card__body .eyebrow{color:#906d5f}
+.leadership-card h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.3rem,3.5vw,3.9rem);letter-spacing:-.055em;margin:15px 0 12px}
+.leadership-card p{font-size:.82rem;max-width:460px;color:#696a64;margin:0}
+@media(max-width:720px){
+ .practice-preview-more{flex-direction:column;align-items:start;gap:18px}
+ .leadership-grid{grid-template-columns:1fr;gap:30px}
+ .leadership-card__monogram{height:280px}
+ .leadership-card__arch span{font-size:8rem}
+ .leadership-card__body{padding:26px}
+ .leadership-card h3{font-size:2.8rem}
+}

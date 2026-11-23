@@ -1,68 +1,195 @@
 export const firm = {
-  name: 'Keystone Law Firm, P.A.',
-  location: 'North Miami, Florida',
-  addressLine1: '12865 West Dixie Highway',
-  addressLine2: 'Second Floor',
-  cityLine: 'North Miami, FL 33161',
-  phone: '(305) 899-8588',
-  phoneHref: 'tel:+13058998588',
-  directions: 'https://www.google.com/maps/search/?api=1&query=12865+West+Dixie+Highway+North+Miami+FL+33161',
+  "name": "Keystone Law Firm, P.A.",
+  "location": "Miami, Florida",
+  "serviceArea": "South Florida",
+  "addressLine1": "12865 West Dixie Highway",
+  "addressLine2": "Second Floor",
+  "cityLine": "North Miami, FL 33161",
+  "phone": "(305) 899-8588",
+  "phoneHref": "tel:+13058998588",
+  "directions": "https://www.google.com/maps/search/?api=1&query=12865+West+Dixie+Highway+North+Miami+FL+33161",
+  "leadership": [
+    {
+      "name": "Frank Wolland",
+      "role": "Head Partner",
+      "note": "Firm owner and Head Partner, leading Keystone Law Firm, P.A."
+    },
+    {
+      "name": "Lo Laughlin",
+      "role": "Managing Partner",
+      "note": "Managing Partner working alongside Frank Wolland in the firm's leadership."
+    }
+  ]
 };
 
-// Practice areas are based on a 2026 Keystone recruiting listing.
-// The firm should verify each description, current availability, attorney roster,
-// and all contact details before publishing the website.
+// Practice areas and leadership supplied by the firm for website content.
+// Specific services, advertising language and contact details require firm review before launch.
 export const practices = [
   {
-    slug: 'civil-litigation',
-    title: 'Civil Litigation',
-    short: 'Disputes deserve a considered strategy, not a one-size-fits-all response.',
-    category: 'Dispute resolution',
-    headline: 'A clear approach to complex disputes.',
-    intro: 'When a dispute begins to affect your business, property, or daily life, understanding the process and the options available matters.',
-    scope: ['Pre-suit analysis and dispute assessment', 'Civil claims and defense matters', 'Negotiation and settlement considerations', 'Court proceedings and litigation support'],
-    note: 'Every dispute turns on its own facts, applicable law, and procedural posture.'
+    "slug": "civil-commercial-litigation",
+    "title": "Civil & Commercial Litigation",
+    "category": "Litigation & disputes",
+    "short": "Focused legal representation for civil claims and business disputes.",
+    "headline": "When disputes carry real consequences.",
+    "intro": "Civil and commercial disputes can affect finances, operations, reputations, and the ability to move forward. Keystone represents individuals and businesses in litigation matters, with attention to the underlying facts and the practical stakes.",
+    "scope": [
+      "Civil claims and litigation",
+      "Commercial and business disputes",
+      "Case evaluation, negotiation and dispute resolution",
+      "Court proceedings and litigation strategy"
+    ],
+    "note": "The appropriate strategy for any dispute depends on its facts, deadlines, and applicable law."
   },
   {
-    slug: 'family-law',
-    title: 'Family Law',
-    short: 'Thoughtful guidance for decisions that are both legal and deeply personal.',
-    category: 'Individuals & families',
-    headline: 'Careful counsel for personal turning points.',
-    intro: 'Family matters can involve significant personal, financial, and practical questions. A clear understanding of the issues can make the next decision more manageable.',
-    scope: ['Divorce and related proceedings', 'Parenting and time-sharing questions', 'Support and financial arrangements', 'Family-related legal disputes'],
-    note: 'The appropriate path will depend on your family circumstances and Florida law.'
+    "slug": "business-corporate-law",
+    "title": "Business & Corporate Law",
+    "category": "Business & transactions",
+    "short": "Legal counsel for business structures, relationships, and consequential decisions.",
+    "headline": "Counsel for the business behind the decision.",
+    "intro": "From organizational and contractual questions to disputes that threaten business continuity, Keystone provides business and corporate legal services addressing both transactional needs and contentious matters.",
+    "scope": [
+      "Business and corporate legal matters",
+      "Commercial agreements and contractual questions",
+      "Business ownership and operational disputes",
+      "Legal considerations affecting transactions"
+    ],
+    "note": "The nature and scope of a business engagement should be discussed directly with the firm."
   },
   {
-    slug: 'probate-guardianship',
-    title: 'Probate & Guardianship',
-    short: 'Helping families understand responsibilities, processes, and next steps.',
-    category: 'Estate matters',
-    headline: 'Clarity when responsibility matters most.',
-    intro: 'Probate and guardianship questions often arise during periods of transition. Understanding roles, obligations, and legal procedures is an important first step.',
-    scope: ['Probate administration questions', 'Estate and fiduciary considerations', 'Guardianship proceedings', 'Court-supervised family matters'],
-    note: 'This is general information and not an assessment of any estate or guardianship matter.'
+    "slug": "real-estate-property-law",
+    "title": "Real Estate & Property Law",
+    "category": "Real estate & property",
+    "short": "Property focused advice for transactions, ownership, and disputes.",
+    "headline": "Property matters. Thoughtfully handled.",
+    "intro": "Real estate matters often combine substantial financial exposure with complex contracts and property rights. Keystone handles transactional and litigation matters involving real estate and property.",
+    "scope": [
+      "Real estate and property disputes",
+      "Property rights and ownership questions",
+      "Real estate contracts and transaction matters",
+      "Negotiation and litigation relating to property"
+    ],
+    "note": "Property law requirements vary by transaction, jurisdiction, and the particular facts involved."
   },
   {
-    slug: 'real-estate',
-    title: 'Real Estate',
-    short: 'Legal perspective for property matters and consequential transactions.',
-    category: 'Property & transactions',
-    headline: 'Move forward with the details in view.',
-    intro: 'Property issues often involve overlapping contractual, financial, and procedural concerns. Reviewing the details early can help clarify available options.',
-    scope: ['Real estate disputes', 'Contract and document review questions', 'Property ownership matters', 'Transaction-related legal issues'],
-    note: 'Specific representation and services should be confirmed directly with the firm.'
+    "slug": "family-law-divorce",
+    "title": "Family Law & Divorce",
+    "category": "Individuals & families",
+    "short": "Guidance on personal and financial decisions during family transitions.",
+    "headline": "Personal matters deserve careful counsel.",
+    "intro": "Family law and divorce can involve difficult decisions about children, relationships, finances, and the future. Keystone assists with family law matters while recognizing the personal circumstances behind each case.",
+    "scope": [
+      "Divorce and dissolution matters",
+      "Family law disputes",
+      "Financial issues arising in family proceedings",
+      "Parenting, time sharing, and support questions"
+    ],
+    "note": "Family law outcomes depend on individual circumstances and applicable Florida law."
   },
   {
-    slug: 'general-litigation',
-    title: 'General Litigation',
-    short: 'An organized response to disputes with real consequences.',
-    category: 'Dispute resolution',
-    headline: 'Understand the issues. Assess the path.',
-    intro: 'Litigation can raise difficult questions about timing, exposure, evidence, and available remedies. A considered approach starts with the specifics.',
-    scope: ['Initial case assessments', 'Claims and defenses', 'Negotiation and dispute resolution', 'Civil court proceedings'],
-    note: 'Case strategy and outcomes always depend on the facts and law.'
+    "slug": "probate-estate-guardianship",
+    "title": "Probate, Estate Administration & Guardianship",
+    "category": "Estate & family matters",
+    "short": "Helping families navigate court processes, estates, and responsibilities.",
+    "headline": "Clarity in moments of responsibility.",
+    "intro": "Probate, estate administration, and guardianship matters can bring together legal procedures, property questions, and sensitive family decisions. Keystone represents clients navigating these processes.",
+    "scope": [
+      "Probate proceedings",
+      "Estate administration matters",
+      "Guardianship proceedings",
+      "Fiduciary obligations and related disputes"
+    ],
+    "note": "Procedures and duties differ depending on the estate, guardianship, and court requirements."
   },
+  {
+    "slug": "construction-litigation",
+    "title": "Construction Litigation",
+    "category": "Litigation & property",
+    "short": "Addressing disputes arising from construction projects and agreements.",
+    "headline": "Disputes that shape a project’s future.",
+    "intro": "Construction conflicts often involve contracts, payments, performance, scheduling, and property interests. Keystone handles litigation involving construction related disputes.",
+    "scope": [
+      "Construction contract disputes",
+      "Project performance and payment conflicts",
+      "Claims involving owners, contractors, or other parties",
+      "Negotiation and litigation of construction matters"
+    ],
+    "note": "Construction claims may involve specialized contractual deadlines and notice requirements."
+  },
+  {
+    "slug": "foreclosure-bankruptcy-litigation",
+    "title": "Foreclosure & Bankruptcy Litigation",
+    "category": "Financial disputes",
+    "short": "Representation involving foreclosure proceedings and bankruptcy disputes.",
+    "headline": "A considered response to financial pressure.",
+    "intro": "Foreclosure and bankruptcy litigation can affect property rights, creditors, debtors, and business operations. Keystone handles litigation matters in these financially significant areas.",
+    "scope": [
+      "Foreclosure litigation and related disputes",
+      "Bankruptcy related litigation",
+      "Creditor and debtor disputes",
+      "Property and financial claims connected to proceedings"
+    ],
+    "note": "Bankruptcy and foreclosure matters can involve strict deadlines and specialized court procedures."
+  },
+  {
+    "slug": "condominium-hoa-disputes",
+    "title": "Condominium & HOA Disputes",
+    "category": "Community & property",
+    "short": "Navigating disputes involving associations, owners, and community property.",
+    "headline": "The details of shared ownership matter.",
+    "intro": "Condominium and homeowners association disputes can affect property, community governance, financial obligations, and resident relationships. Keystone handles these disputes in South Florida.",
+    "scope": [
+      "Condominium association disputes",
+      "Homeowners association disputes",
+      "Community governance and enforcement conflicts",
+      "Property rights and assessment related disputes"
+    ],
+    "note": "Association issues depend on governing documents and applicable Florida law."
+  },
+  {
+    "slug": "contract-disputes-debt-collection",
+    "title": "Contract Disputes & Debt Collection",
+    "category": "Contracts & financial claims",
+    "short": "Legal approaches to contested agreements, payment obligations, and collection matters.",
+    "headline": "When an agreement becomes a dispute.",
+    "intro": "Contract disagreements and unresolved payment obligations can disrupt both personal and business finances. Keystone handles contract disputes and debt collection matters.",
+    "scope": [
+      "Contract interpretation and breach disputes",
+      "Business and personal payment conflicts",
+      "Debt collection related litigation",
+      "Negotiation and resolution of contractual claims"
+    ],
+    "note": "Collection activity is subject to applicable state and federal laws and depends on the specific obligation."
+  },
+  {
+    "slug": "code-enforcement-zoning-municipal-law",
+    "title": "Code Enforcement, Zoning & Municipal Law",
+    "category": "Government & property",
+    "short": "Addressing municipal rules, land use issues, and local enforcement matters.",
+    "headline": "Navigate the rules shaping your property.",
+    "intro": "Local code enforcement, zoning, and municipal legal questions can affect property use, development, and business activities. Keystone represents clients in matters involving municipal law.",
+    "scope": [
+      "Code enforcement proceedings and disputes",
+      "Zoning and land use questions",
+      "Municipal regulatory conflicts",
+      "Property and business matters involving local government"
+    ],
+    "note": "Local ordinances and procedures differ among municipalities and require case specific review."
+  },
+  {
+    "slug": "nonprofit-religious-organizations",
+    "title": "Nonprofit & Religious Organization Representation",
+    "category": "Organizations & governance",
+    "short": "Legal representation for nonprofits, religious institutions, and their operations.",
+    "headline": "Guidance for organizations with a purpose.",
+    "intro": "Nonprofit and religious organizations encounter organizational, contractual, property, and legal disputes alongside their missions. Keystone represents nonprofit and religious organizations in legal matters.",
+    "scope": [
+      "Nonprofit organization legal matters",
+      "Religious organization representation",
+      "Governance, contractual, and property issues",
+      "Disputes involving organizational operations"
+    ],
+    "note": "Nonprofit and religious organization matters may involve special legal or regulatory considerations."
+  }
 ];
 
 export const articles = [
