@@ -371,7 +371,7 @@ function Disclaimer() {
       <p>For urgent deadlines, contact an attorney promptly. A website visit or message does not pause any filing or response deadline.</p>
     </>},
     {id:'advertising',title:'Attorney advertising and professional information',body:<>
-      <p>This website is information about legal services and may constitute attorney advertising under the Rules Regulating The Florida Bar. The firm's publicly identified leadership is Frank Wolland, Head Partner, and Lo Laughlin, Managing Partner.</p>
+      <p>This website contains information about legal services and may constitute attorney advertising under the Rules Regulating The Florida Bar. The firm's publicly identified leadership is Frank Wolland, Head Partner, and Lo Laughlin, Managing Partner.</p>
       <p>Practice area listings do not represent that an attorney is board certified, a specialist, or an expert, and they do not imply approval or endorsement by The Florida Bar. Any attorney's admission, eligibility, and ability to undertake a matter should be verified for the jurisdiction involved.</p>
     </>},
     {id:'results',title:'No promise of results',body:<>
@@ -409,8 +409,8 @@ function PrivacyPolicy() {
       <p><strong>Google Maps.</strong> The Contact page provides an external directions link. Google Maps opens only when you choose to follow the link and is subject to Google's own policies.</p>
     </>},
     {id:'cookies-tracking',title:'Cookies, analytics, and advertising',body:<>
-      <p>The current website source does not include a firm operated analytics SDK, advertising pixel, online behavioral advertising script, or marketing consent form. The website does not currently contain a client login that sets an account session.</p>
-      <p>That source code observation should not be interpreted as a guarantee that no hosting, browser, or third party security technology may use cookies or similar identifiers. Browser settings can generally be used to manage or block cookies. If new analytics, advertising, or intake tools are introduced, this notice should be updated to describe their actual operation and any required choices.</p>
+      <p>As currently configured, the public website does not use firm operated advertising pixels or behavioral marketing tracking scripts. It does not offer visitor accounts or collect inquiries through an online form.</p>
+      <p>Hosting, browser, and third party security services may use technical cookies or similar identifiers. You can generally manage cookie settings through your browser. If we introduce analytics, advertising, or online intake features, we will update this notice to describe their use and any choices required by law.</p>
     </>},
     {id:'purposes',title:'How information may be used',body:<>
       <p>Website technical information may be processed to deliver pages, keep the site working, troubleshoot errors, understand and prevent malicious activity, and meet applicable legal requirements. Information voluntarily provided when contacting the firm may be used to respond to the inquiry, determine whether a consultation is appropriate, and carry out any necessary conflict screening or agreed legal services.</p>
@@ -418,10 +418,10 @@ function PrivacyPolicy() {
     </>},
     {id:'disclosures',title:'When information may be disclosed',body:<>
       <p>Technical website data may be processed by providers involved in hosting, font delivery, and security as described above. Information received by the firm may be disclosed as necessary to respond to an inquiry, operate the firm, comply with law or a lawful process, or provide legal services when authorized, subject to applicable professional obligations.</p>
-      <p>No customer database, advertising audience, or sale of visitor information has been identified in the current website code. The firm's broader business practices and any future integrations should be separately reviewed before making a categorical promise about all personal information.</p>
+      <p>This public website does not provide an advertising audience sign up, online subscriber list, or feature for selling visitor details. Any information obtained through separate communications with the firm is handled in accordance with applicable legal and professional obligations.</p>
     </>},
     {id:'retention-security',title:'Retention and security',body:<>
-      <p>Technical records may be retained by hosting and service providers according to their applicable settings and policies. Information obtained through direct communications or legal representation may need to be maintained for operational, legal, regulatory, or professional reasons. No specific retention period for every category of information is represented here.</p>
+      <p>Website service providers may retain technical records according to their own settings and policies. Information obtained through direct communications or legal representation may need to be maintained for operational, legal, regulatory, or professional reasons. Retention periods vary with the type of information and the obligations that apply.</p>
       <p>Website and service providers use technical and organizational protections, but no internet transmission or electronic storage method is guaranteed to be completely secure. Avoid sending sensitive documents through an unapproved channel.</p>
     </>},
     {id:'privacy-choices',title:'Your choices and inquiries',body:<>
