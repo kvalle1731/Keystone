@@ -426,3 +426,50 @@ svg{display:block}
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}
 }
+
+/* Keystone legal, privacy and accessibility policy pages */
+.policy-page{background:var(--chalk)}
+.policy-page__layout{display:grid;grid-template-columns:minmax(210px,260px) minmax(0,850px);justify-content:space-between;gap:clamp(45px,7vw,120px);align-items:start}
+.policy-page__side{position:sticky;top:120px;align-self:start}
+.policy-page__side>.eyebrow{color:var(--cobalt);margin-bottom:18px}
+.policy-page__date{font-size:.74rem;color:var(--muted);line-height:1.8;margin:0 0 29px}
+.policy-page__date strong{color:var(--ink);font-size:.78rem}
+.policy-page__side nav{display:flex;flex-direction:column;align-items:stretch;border-top:1px solid var(--border);max-height:55vh;overflow-y:auto;scrollbar-width:thin}
+.policy-page__side nav a{font-size:.72rem;line-height:1.5;color:#505a74;padding:12px 8px 12px 0;border-bottom:1px solid var(--border);transition:color .18s,padding .18s}
+.policy-page__side nav a:hover,.policy-page__side nav a:focus-visible{color:var(--cobalt);padding-left:5px}
+.policy-page__side-contact{border-top:2px solid var(--cobalt);padding-top:20px;margin-top:29px;font-size:.75rem;color:var(--muted);line-height:1.75}
+.policy-page__side-contact>span{font-weight:700;color:var(--ink)}
+.policy-page__side-contact p{margin:10px 0 13px}
+.policy-page__side-contact a{color:var(--cobalt);font-weight:700}
+.policy-page__main{border-top:1px solid var(--border)}
+.policy-section{scroll-margin-top:120px;border-bottom:1px solid var(--border);padding:34px 0 48px}
+.policy-section__index{display:block;font-size:.62rem;color:var(--cobalt);font-weight:700;letter-spacing:.1em;margin-bottom:20px}
+.policy-section h2{font:400 clamp(2rem,3vw,3.2rem)/1.1 var(--display);letter-spacing:-.035em;margin:0 0 19px}
+.policy-section__copy{font-size:.87rem;color:#555b6d;line-height:1.85}
+.policy-section__copy p{margin:0 0 16px;line-height:1.87}
+.policy-section__copy p:last-child{margin-bottom:0}
+.policy-section__copy strong{font-weight:700;color:var(--ink)}
+.policy-section__copy a{color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;text-decoration-color:#7682db88;font-weight:600}
+.policy-section__copy a:hover{color:#1726a4;text-decoration-color:currentColor}
+.policy-section__copy a svg{display:inline-block;vertical-align:middle;margin-left:3px}
+.footer__legal-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px}
+.footer__legal-nav a{white-space:nowrap}
+@media(max-width:950px){
+ .policy-page__layout{grid-template-columns:200px minmax(0,1fr);gap:36px}
+ .footer__legal-nav{justify-content:start}
+}
+@media(max-width:670px){
+ .policy-page__layout{grid-template-columns:1fr;gap:40px}
+ .policy-page__side{position:static;display:grid;grid-template-columns:1fr 1fr;gap:12px 26px}
+ .policy-page__side>.eyebrow{grid-column:1}
+ .policy-page__date{grid-column:2;grid-row:1;text-align:right;margin:0}
+ .policy-page__side nav{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0 19px;max-height:none}
+ .policy-page__side-contact{grid-column:1/-1;margin-top:10px}
+ .policy-section{scroll-margin-top:95px;padding:26px 0 37px}
+ .policy-section h2{font-size:clamp(2.1rem,8.3vw,3rem)}
+ .policy-section__copy{font-size:.84rem}
+ .footer__legal-nav{gap:10px 19px}
+}
+
+.contact-page__grid>div:first-child p a{color:var(--cobalt);text-decoration:underline;text-underline-offset:3px}
+.contact-page__grid>div:first-child p a:hover{color:#c4caff}

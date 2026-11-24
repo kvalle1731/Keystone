@@ -49,3 +49,15 @@ Confirm exact address, phone number, scope of offered legal services, advertisin
 ### Hosting note
 
 Two Vercel deployment status contexts have appeared on Keystone's GitHub commits, `keystone` and `keystone1`. The current Vercel connector has not been authorized to access these projects' settings or domain lists, so domain consolidation has not been performed. Preserve one project and primary domain once actual routing and ownership are confirmed.
+
+
+## Website policy pages
+
+Updated November 24, 2026. The public site now includes separate, searchable, linked policy pages:
+
+- `/disclaimer`: legal notice, advertising, law firm identification and office location, no legal advice, no automatic representation, unsolicited communications, prospective client confidentiality, deadlines, results and jurisdiction.
+- `/privacy`: disclosures specific to the current static site, Vercel hosting, remote Google Fonts, Google Maps links, available website and inquiry data, tracking scripts, purpose, retention and requests.
+- `/terms`: permitted website use, limitations, third party links, content rights, relationship to an engagement agreement and applicable law.
+- `/accessibility`: assistance information and website feedback, without pretending to have obtained an independent WCAG certification.
+
+These are real website sections rather than a generic "final review" paragraph, but **firm counsel must approve the notices as the actual organization responsible for data processing and lawyer advertising**. The public source code has no website contact form, client portal or advertising pixels. Production configuration must be checked for any added analytics, security cookies, form services, email tools, log settings, or policy discrepancies. The site's real logo, current office address, and correct contact number should also be confirmed.
